@@ -35,10 +35,51 @@
             background-color: var(--bg-cream);
         }
 
+        /* Skip Navigation Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: var(--white);
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 10000;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
         h1, h2, h3 {
             font-family: 'DM Serif Display', serif;
             font-weight: 400;
             line-height: 1.2;
+        }
+
+        /* Enhanced Focus Indicators */
+        a:focus, button:focus, input:focus, textarea:focus, select:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        *:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Screen Reader Only Text */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
 
         /* Header */
@@ -68,13 +109,20 @@
             font-family: 'DM Serif Display', serif;
         }
 
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
         .header-phone {
             display: flex;
             align-items: center;
             gap: 0.5rem;
             font-size: 1.25rem;
             font-weight: 600;
-            color: var(--primary);
+            color: #1a252f;
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -87,6 +135,34 @@
             width: 24px;
             height: 24px;
             fill: currentColor;
+        }
+
+        .payment-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: #006aff;
+            border: 2px solid #006aff;
+            border-radius: 6px;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 106, 255, 0.2);
+        }
+
+        .payment-button:hover {
+            background: #0056cc;
+            border-color: #0056cc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 106, 255, 0.3);
+        }
+
+        .payment-icon {
+            width: 20px;
+            height: 20px;
         }
 
         /* Hero Section */
@@ -271,6 +347,11 @@
             gap: 0.5rem;
         }
 
+        .contact-item dt,
+        .contact-item dd {
+            margin: 0;
+        }
+
         .contact-label {
             font-weight: 600;
             color: var(--primary);
@@ -396,6 +477,31 @@
             transform: none;
         }
 
+        /* Form Error Messages */
+        .error-message {
+            color: #c0392b;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .error-message.visible {
+            display: block;
+        }
+
+        .form-group input.error {
+            border-color: #c0392b;
+        }
+
+        /* Live Region for Screen Readers */
+        .sr-live {
+            position: absolute;
+            left: -10000px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
         /* SMS Privacy Policy */
         .privacy-section {
             background: var(--bg-cream);
@@ -473,6 +579,7 @@
         .footer-info {
             margin-bottom: 1.5rem;
             font-size: 1rem;
+            font-style: normal;
         }
 
         .footer-info p {
@@ -488,6 +595,23 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .header-right {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.75rem;
+            }
+
+            .header-phone,
+            .payment-button {
+                justify-content: center;
+                width: 100%;
+            }
+
             .hero {
                 padding: 3rem 5% 4rem;
             }
@@ -543,130 +667,165 @@
     </style>
 </head>
 <body>
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Screen Reader Live Region for Announcements -->
+    <div aria-live="polite" aria-atomic="true" class="sr-live" id="sr-announcements"></div>
+
     <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">Affordable Self Storage</div>
-            <a href="tel:607-770-9342" class="header-phone">
-                <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-                </svg>
-                607-770-9342
-            </a>
-        </div>
+    <header role="banner">
+        <nav aria-label="Main navigation">
+            <div class="header-content">
+                <div class="logo" role="img" aria-label="Affordable Self Storage">Affordable Self Storage</div>
+                <div class="header-right">
+                    <a href="tel:607-770-9342" class="header-phone" aria-label="Call us at 607-770-9342">
+                        <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                        </svg>
+                        607-770-9342
+                    </a>
+                    <a href="https://square.link/u/AypbenJH" class="payment-button" target="_blank" rel="noopener noreferrer" aria-label="Pay your rent online">
+                        <svg class="payment-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                            <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                        </svg>
+                        Pay Rent
+                    </a>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-heading">
         <div class="hero-content">
-            <h1>Affordable Storage Solutions in Johnson City</h1>
+            <h1 id="hero-heading">Affordable Storage Solutions in Johnson City</h1>
             <p class="hero-subtitle">Simple, accessible self storage with convenient hours, contactless rental, and autopay options. Find the perfect space for your belongings today.</p>
             <div class="cta-buttons">
-                <a href="tel:607-770-9342" class="btn btn-primary">Call Now: 607-770-9342</a>
-                <a href="#contact" class="btn btn-secondary">View Location & Hours</a>
+                <a href="tel:607-770-9342" class="btn btn-primary">Call Now: <span class="sr-only">at</span> 607-770-9342</a>
+                <a href="#contact" class="btn btn-secondary">View Location <span class="sr-only">and</span> Hours</a>
+                <a href="https://square.link/u/AypbenJH" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    <svg style="width: 20px; height: 20px; margin-right: 8px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                    </svg>
+                    Pay Rent Online
+                </a>
+                <a href="tenant-application.html" class="btn btn-secondary">
+                    <svg style="width: 20px; height: 20px; margin-right: 8px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                    </svg>
+                    Apply Online
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+
     <!-- Features Section -->
-    <section>
+    <section aria-labelledby="features-heading">
         <div class="container">
-            <h2 class="section-title">Why Choose Affordable Self Storage?</h2>
+            <h2 id="features-heading" class="section-title">Why Choose Affordable Self Storage?</h2>
             <p class="section-subtitle">Straightforward storage solutions with easy access and convenient features</p>
             
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Contactless Rental</h3>
+            <div class="features-grid" role="list">
+                <article class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">📱</div>
+                    <h3>Contactless Rental<span class="sr-only">: </span></h3>
                     <p>Rent your unit entirely online with our contactless contracting process. No office visit required - get started from anywhere.</p>
-                </div>
+                </article>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">💳</div>
-                    <h3>Automatic Payments</h3>
+                <article class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">💳</div>
+                    <h3>Automatic Payments<span class="sr-only">: </span></h3>
                     <p>Set up autopay and never worry about late fees. Your monthly rental is automatically processed for hassle-free storage.</p>
-                </div>
+                </article>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">📦</div>
-                    <h3>Various Unit Sizes</h3>
+                <article class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">📦</div>
+                    <h3>Various Unit Sizes<span class="sr-only">: </span></h3>
                     <p>Multiple storage unit sizes available to fit your needs. From small spaces to larger units, we have options for every situation.</p>
-                </div>
+                </article>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">🚪</div>
-                    <h3>Easy Access</h3>
+                <article class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">🚪</div>
+                    <h3>Easy Access<span class="sr-only">: </span></h3>
                     <p>Access your unit from 6am to 11pm, seven days a week. Convenient drive-up access makes loading and unloading simple.</p>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" aria-labelledby="contact-heading">
         <div class="container">
-            <h2 class="section-title">Contact Information</h2>
+            <h2 id="contact-heading" class="section-title">Contact Information</h2>
             <p class="section-subtitle">Find us at our Johnson City location with convenient access hours</p>
             
             <div class="contact-section">
-                <div class="contact-grid">
+                <dl class="contact-grid">
                     <div class="contact-item">
-                        <span class="contact-label">Phone</span>
-                        <span class="contact-value"><a href="tel:607-770-9342">607-770-9342</a></span>
+                        <dt class="contact-label">Phone</dt>
+                        <dd class="contact-value"><a href="tel:607-770-9342" aria-label="Call 607-770-9342">607-770-9342</a></dd>
                     </div>
                     
                     <div class="contact-item">
-                        <span class="contact-label">Address</span>
-                        <span class="contact-value">
-                            <a href="https://maps.google.com/?q=2248+Airport+Rd,+Johnson+City,+NY+13790" target="_blank">
+                        <dt class="contact-label">Address</dt>
+                        <dd class="contact-value">
+                            <a href="https://maps.google.com/?q=2248+Airport+Rd,+Johnson+City,+NY+13790" target="_blank" rel="noopener noreferrer" aria-label="View location on Google Maps: 2248 Airport Road, Johnson City, New York 13790">
                                 2248 Airport Rd<br>
                                 Johnson City, NY 13790
                             </a>
-                        </span>
+                        </dd>
                     </div>
                     
                     <div class="contact-item">
-                        <span class="contact-label">Office Hours</span>
-                        <span class="contact-value">By Appointment</span>
+                        <dt class="contact-label">Office Hours</dt>
+                        <dd class="contact-value">By Appointment</dd>
                     </div>
                     
                     <div class="contact-item">
-                        <span class="contact-label">Facility Access</span>
-                        <span class="contact-value">6:00 AM - 11:00 PM<br>7 Days a Week</span>
+                        <dt class="contact-label">Facility Access</dt>
+                        <dd class="contact-value">6:00 <abbr title="ante meridiem">AM</abbr> - 11:00 <abbr title="post meridiem">PM</abbr><br>7 Days a Week</dd>
                     </div>
-                </div>
+                </dl>
             </div>
         </div>
     </section>
 
     <!-- SMS Opt-in Section -->
-    <section class="sms-optin-section">
+    <section class="sms-optin-section" aria-labelledby="sms-heading">
         <div class="container">
-            <h2 class="section-title" style="color: white;">Stay Connected via Text</h2>
+            <h2 id="sms-heading" class="section-title" style="color: white;">Stay Connected via Text</h2>
             <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Get updates, payment reminders, and exclusive offers sent directly to your phone</p>
             
             <div class="sms-form-container">
-                <form id="smsOptinForm" onsubmit="handleSMSSubmit(event)">
+                <form id="smsOptinForm" onsubmit="handleSMSSubmit(event)" novalidate>
                     <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="name">Full Name <span aria-label="required">*</span></label>
+                        <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-error" autocomplete="name">
+                        <div id="name-error" class="error-message" role="alert"></div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="phone">Mobile Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" placeholder="(607) 555-1234" required pattern="[0-9\s\(\)\-]+">
+                        <label for="phone">Mobile Phone Number <span aria-label="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="(607) 555-1234" required aria-required="true" aria-describedby="phone-error phone-help" pattern="[0-9\s\(\)\-]+" autocomplete="tel">
+                        <div id="phone-help" class="sr-only">Enter your 10-digit mobile phone number</div>
+                        <div id="phone-error" class="error-message" role="alert"></div>
                     </div>
                     
-                    <div class="consent-box">
+                    <div class="consent-box" role="region" aria-label="SMS Program Information">
                         <strong>About Our SMS Program:</strong><br>
                         By providing your mobile number and opting in, you consent to receive automated text messages from Affordable Self Storage. Message types include: account alerts, payment reminders, promotional offers, and facility updates. Message frequency varies. Message and data rates may apply.
                     </div>
                     
                     <div class="checkbox-group">
-                        <input type="checkbox" id="consent" name="consent" required>
+                        <input type="checkbox" id="consent" name="consent" required aria-required="true" aria-describedby="consent-error">
                         <label for="consent">
                             I consent to receive automated SMS messages from Affordable Self Storage at the mobile number provided above. I understand I can reply STOP to unsubscribe at any time or HELP for assistance. I have read and agree to the <a href="#privacy-policy" style="color: var(--accent-light); text-decoration: underline;">SMS Privacy Policy</a>.
                         </label>
+                        <div id="consent-error" class="error-message" role="alert"></div>
                     </div>
                     
                     <button type="submit" class="form-submit" id="submitBtn">
@@ -678,12 +837,12 @@
     </section>
 
     <!-- SMS Privacy Policy Section -->
-    <section id="privacy-policy" class="privacy-section">
+    <section id="privacy-policy" class="privacy-section" aria-labelledby="privacy-heading">
         <div class="container">
-            <h2 class="section-title">SMS Privacy Policy</h2>
+            <h2 id="privacy-heading" class="section-title">SMS Privacy Policy</h2>
             <p class="section-subtitle">Our commitment to protecting your privacy and data</p>
             
-            <div class="privacy-content">
+            <article class="privacy-content">
                 <p><strong>Last Updated:</strong> February 5, 2026</p>
                 <p><strong>SMS Program Operator:</strong> Affordable Self Storage (Merritt Paul Ltd dba Affordable Self Storage)</p>
                 
@@ -800,27 +959,92 @@
                 
                 <h3>16. New York Residents</h3>
                 <p>As a New York-based business serving New York residents, we are committed to protecting your privacy rights under New York law. If you have questions about your privacy rights as a New York resident, please contact us using the information provided in Section 13 above.</p>
-            </div>
+            </article>
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-content">
-            <div class="footer-info">
+            <address class="footer-info">
                 <p><strong>Affordable Self Storage</strong></p>
-                <p>Merritt Paul Ltd dba Affordable Self Storage</p>
-                <p>2248 Airport Rd, Johnson City, NY 13790</p>
-                <p>Phone: <a href="tel:607-770-9342" style="color: var(--accent-light); text-decoration: none;">607-770-9342</a></p>
-                <p>Facility Access: 6:00 AM - 11:00 PM Daily | Office: By Appointment</p>
-            </div>
+                <p>Merritt Paul Ltd <abbr title="doing business as">dba</abbr> Affordable Self Storage</p>
+                <p>2248 Airport Rd, Johnson City, <abbr title="New York">NY</abbr> 13790</p>
+                <p>Phone: <a href="tel:607-770-9342" style="color: var(--accent-light); text-decoration: none;" aria-label="Call 607-770-9342">607-770-9342</a></p>
+                <p>Facility Access: 6:00 <abbr title="ante meridiem">AM</abbr> - 11:00 <abbr title="post meridiem">PM</abbr> Daily | Office: By Appointment</p>
+            </address>
             <div class="footer-bottom">
-                <p>&copy; 2026 Merritt Paul Ltd dba Affordable Self Storage. All rights reserved. | <a href="#privacy-policy" style="color: var(--accent-light); text-decoration: none;">SMS Privacy Policy</a></p>
+                <p>&copy; <span id="current-year">2026</span> Merritt Paul Ltd <abbr title="doing business as">dba</abbr> Affordable Self Storage. All rights reserved. | <a href="#privacy-policy" style="color: var(--accent-light); text-decoration: none;">SMS Privacy Policy</a></p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Set current year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Screen reader announcement helper
+        function announceToScreenReader(message) {
+            const liveRegion = document.getElementById('sr-announcements');
+            liveRegion.textContent = message;
+            setTimeout(() => {
+                liveRegion.textContent = '';
+            }, 1000);
+        }
+
+        // Form validation helper
+        function showError(inputId, message) {
+            const input = document.getElementById(inputId);
+            const errorDiv = document.getElementById(inputId + '-error');
+            
+            input.classList.add('error');
+            input.setAttribute('aria-invalid', 'true');
+            errorDiv.textContent = message;
+            errorDiv.classList.add('visible');
+            
+            announceToScreenReader(message);
+        }
+
+        function clearError(inputId) {
+            const input = document.getElementById(inputId);
+            const errorDiv = document.getElementById(inputId + '-error');
+            
+            input.classList.remove('error');
+            input.setAttribute('aria-invalid', 'false');
+            errorDiv.textContent = '';
+            errorDiv.classList.remove('visible');
+        }
+
+        // Real-time validation
+        document.getElementById('name').addEventListener('blur', function() {
+            if (!this.value.trim()) {
+                showError('name', 'Please enter your full name');
+            } else {
+                clearError('name');
+            }
+        });
+
+        document.getElementById('phone').addEventListener('blur', function() {
+            const phoneValue = this.value.replace(/\D/g, '');
+            if (!phoneValue) {
+                showError('phone', 'Please enter your mobile phone number');
+            } else if (phoneValue.length !== 10) {
+                showError('phone', 'Please enter a valid 10-digit phone number');
+            } else {
+                clearError('phone');
+            }
+        });
+
+        document.getElementById('consent').addEventListener('change', function() {
+            if (!this.checked) {
+                showError('consent', 'You must consent to receive SMS messages');
+            } else {
+                clearError('consent');
+            }
+        });
+
         // Form submission handler
         function handleSMSSubmit(event) {
             event.preventDefault();
@@ -828,24 +1052,74 @@
             const submitBtn = document.getElementById('submitBtn');
             const form = document.getElementById('smsOptinForm');
             
+            // Clear all previous errors
+            clearError('name');
+            clearError('phone');
+            clearError('consent');
+            
+            // Validate form
+            let isValid = true;
+            
+            const nameValue = document.getElementById('name').value.trim();
+            if (!nameValue) {
+                showError('name', 'Please enter your full name');
+                isValid = false;
+            }
+            
+            const phoneValue = document.getElementById('phone').value.replace(/\D/g, '');
+            if (!phoneValue) {
+                showError('phone', 'Please enter your mobile phone number');
+                isValid = false;
+            } else if (phoneValue.length !== 10) {
+                showError('phone', 'Please enter a valid 10-digit phone number');
+                isValid = false;
+            }
+            
+            const consentChecked = document.getElementById('consent').checked;
+            if (!consentChecked) {
+                showError('consent', 'You must consent to receive SMS messages');
+                isValid = false;
+            }
+            
+            if (!isValid) {
+                announceToScreenReader('Form contains errors. Please correct them and try again.');
+                // Focus on first error
+                if (!nameValue) {
+                    document.getElementById('name').focus();
+                } else if (!phoneValue || phoneValue.length !== 10) {
+                    document.getElementById('phone').focus();
+                } else {
+                    document.getElementById('consent').focus();
+                }
+                return;
+            }
+            
             // Get form data
             const formData = {
-                name: document.getElementById('name').value,
+                name: nameValue,
                 phone: document.getElementById('phone').value,
-                consent: document.getElementById('consent').checked
+                consent: consentChecked
             };
             
             // Disable submit button
             submitBtn.disabled = true;
+            submitBtn.setAttribute('aria-busy', 'true');
             submitBtn.textContent = 'Processing...';
+            
+            announceToScreenReader('Submitting your subscription request');
             
             // In production, this would send data to your SMS provider
             // For now, we'll simulate a successful submission
             setTimeout(() => {
                 alert('Thank you for subscribing! You will start receiving SMS updates from Affordable Self Storage. Reply STOP at any time to unsubscribe.');
+                announceToScreenReader('Successfully subscribed to SMS updates');
                 form.reset();
                 submitBtn.disabled = false;
+                submitBtn.removeAttribute('aria-busy');
                 submitBtn.textContent = 'Subscribe to SMS Updates';
+                
+                // Return focus to form for keyboard users
+                document.getElementById('name').focus();
             }, 1000);
             
             // TODO: Replace with actual API call to your SMS provider
@@ -859,26 +1133,43 @@
             // .then(data => {
             //     if (data.success) {
             //         alert('Success message');
+            //         announceToScreenReader('Successfully subscribed');
             //         form.reset();
+            //     } else {
+            //         announceToScreenReader('Subscription failed. Please try again.');
             //     }
             // })
-            // .catch(error => console.error('Error:', error))
+            // .catch(error => {
+            //     console.error('Error:', error);
+            //     announceToScreenReader('An error occurred. Please try again.');
+            // })
             // .finally(() => {
             //     submitBtn.disabled = false;
+            //     submitBtn.removeAttribute('aria-busy');
             //     submitBtn.textContent = 'Subscribe to SMS Updates';
             // });
         }
         
-        // Smooth scrolling for anchor links
+        // Smooth scrolling for anchor links with accessibility consideration
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                
+                // Allow skip link to work without preventDefault
+                if (href === '#main-content') {
+                    return;
+                }
+                
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    // Set focus to target for keyboard users
+                    target.setAttribute('tabindex', '-1');
+                    target.focus();
                 }
             });
         });
@@ -897,6 +1188,15 @@
                 }
             }
             e.target.value = value;
+        });
+
+        // Clear input formatting errors when user starts typing
+        ['name', 'phone'].forEach(fieldId => {
+            document.getElementById(fieldId).addEventListener('input', function() {
+                if (this.value.trim()) {
+                    clearError(fieldId);
+                }
+            });
         });
     </script>
 </body>
