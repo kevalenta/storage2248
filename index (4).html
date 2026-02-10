@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affordable Self Storage - Johnson City, NY | Secure Storage Units</title>
+    <meta name="description" content="Affordable Self Storage in Johnson City, NY offers secure, climate-controlled storage units. 24/7 access, competitive rates. Call 607-770-9342 for availability.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-dark: #1a252f;
+            --accent: #3498db;
+            --accent-light: #5dade2;
+            --text-dark: #2c3e50;
+            --text-light: #5d6d7e;
+            --bg-cream: #ecf0f1;
+            --white: #ffffff;
+            --border: #bdc3c7;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-cream);
+        }
+
+        /* Skip Navigation Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: var(--white);
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 10000;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        /* Enhanced Focus Indicators */
+        a:focus, button:focus, input:focus, textarea:focus, select:focus {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        *:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Screen Reader Only Text */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            padding: 1.25rem 5%;
+            box-shadow: 0 2px 10px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .header-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            color: var(--primary);
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a252f;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .header-phone:hover {
+            color: #1a6fa8;
+        }
+
+        .phone-icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .payment-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: #006aff;
+            border: 2px solid #006aff;
+            border-radius: 6px;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 106, 255, 0.2);
+        }
+
+        .payment-button:hover {
+            background: #0056cc;
+            border-color: #0056cc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 106, 255, 0.3);
+        }
+
+        .payment-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 5rem 5% 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-weight: 300;
+            max-width: 600px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px var(--shadow);
+            border-top: 4px solid var(--accent);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 4px 30px var(--shadow);
+            margin-top: 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-item dt,
+        .contact-item dd {
+            margin: 0;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-value {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .contact-value a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: #1a6fa8;
+        }
+
+        .directions-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 0.75rem;
+            padding: 0.5rem 1rem;
+            background: var(--accent);
+            color: var(--white) !important;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none !important;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .directions-link:hover {
+            background: #1a6fa8 !important;
+            color: var(--white) !important;
+            transform: translateY(-1px);
+        }
+
+        /* SMS Opt-in Form */
+        .sms-optin-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--white);
+            padding: 4rem 0;
+        }
+
+        .sms-form-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 3rem;
+            max-width: 700px;
+            margin: 2rem auto 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--text-dark);
+            font-family: 'Work Sans', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .consent-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .checkbox-group label {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1.25rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background-color: var(--accent);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .form-submit:hover {
+            background-color: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .form-submit:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Form Error Messages */
+        .error-message {
+            color: #c0392b;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .error-message.visible {
+            display: block;
+        }
+
+        .form-group input.error {
+            border-color: #c0392b;
+        }
+
+        /* Live Region for Screen Readers */
+        .sr-live {
+            position: absolute;
+            left: -10000px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 3rem 5% 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-info {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            font-style: normal;
+        }
+
+        .footer-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .header-right {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.75rem;
+            }
+
+            .header-phone,
+            .payment-button {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .hero {
+                padding: 3rem 5% 4rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .contact-section, .sms-form-container, .privacy-content {
+                padding: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content, .feature-card {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .feature-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .feature-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .feature-card:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Screen Reader Live Region for Announcements -->
+    <div aria-live="polite" aria-atomic="true" class="sr-live" id="sr-announcements"></div>
+
+    <!-- Header -->
+    <header role="banner">
+        <nav aria-label="Main navigation">
+            <div class="header-content">
+                <div class="logo" role="img" aria-label="Affordable Self Storage">Affordable Self Storage</div>
+                <div class="header-right">
+                    <a href="tel:607-770-9342" class="header-phone" aria-label="Call us at 607-770-9342">
+                        <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                        </svg>
+                        607-770-9342
+                    </a>
+                    <a href="tenant-application.html" class="payment-button" style="background: #1e8449; border-color: #1e8449;" aria-label="Apply for a storage unit online">
+                        <svg class="payment-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                        </svg>
+                        Apply Online
+                    </a>
+                    <a href="https://square.link/u/AypbenJH" class="payment-button" target="_blank" rel="noopener noreferrer" aria-label="Pay your rent online">
+                        <svg class="payment-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                            <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+                        </svg>
+                        Pay Rent
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-content">
+            <h1 id="hero-heading">Affordable Storage Solutions in Johnson City</h1>
+            <p class="hero-subtitle">Simple, accessible self storage with convenient hours, contactless rental, and autopay options. Find the perfect space for your belongings today.</p>
+            <div class="cta-buttons">
+                <a href="tel:607-770-9342" class="btn btn-primary">Call Now: <span class="sr-only">at</span> 607-770-9342</a>
+                <a href="#contact" class="btn btn-secondary">View Location <span class="sr-only">and</span> Hours</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+
+    <!-- Features Section -->
+    <section aria-labelledby="features-heading">
+        <div class="container">
+            <h2 id="features-heading" class="section-title">Why Choose Affordable Self Storage?</h2>
+            <p class="section-subtitle">Straightforward storage solutions with easy access and convenient features</p>
+            
+            <div class="features-grid" role="list">
+                <article class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">📱</div>
+                    <h3>Contactless Rental<span class="sr-only">: </span></h3>
+                    <p>Rent your unit entirely online with our contactless contracting process. No office visit required - get started from anywhere.</p>
+                </article>
+                
+                <article class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">💳</div>
+                    <h3>Automatic Payments<span class="sr-only">: </span></h3>
+                    <p>Set up autopay and never worry about late fees. Your monthly rental is automatically processed for hassle-free storage.</p>
+                </article>
+                
+                <article class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">📦</div>
+                    <h3>Various Unit Sizes<span class="sr-only">: </span></h3>
+                    <p>Multiple storage unit sizes available to fit your needs. From small spaces to larger units, we have options for every situation.</p>
+                </article>
+                
+                <article class="feature-card" role="listitem">
+                    <div class="feature-icon" aria-hidden="true">🚪</div>
+                    <h3>Easy Access<span class="sr-only">: </span></h3>
+                    <p>Access your unit from 6am to 11pm, seven days a week. Convenient drive-up access makes loading and unloading simple.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" aria-labelledby="contact-heading">
+        <div class="container">
+            <h2 id="contact-heading" class="section-title">Contact Information</h2>
+            <p class="section-subtitle">Find us at our Johnson City location with convenient access hours</p>
+            
+            <div class="contact-section">
+                <dl class="contact-grid">
+                    <div class="contact-item">
+                        <dt class="contact-label">Phone</dt>
+                        <dd class="contact-value"><a href="tel:607-770-9342" aria-label="Call 607-770-9342">607-770-9342</a></dd>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <dt class="contact-label">Address</dt>
+                        <dd class="contact-value">
+                            <a href="https://maps.google.com/?q=2248+Airport+Rd,+Johnson+City,+NY+13790" target="_blank" rel="noopener noreferrer" aria-label="View location on Google Maps: 2248 Airport Road, Johnson City, New York 13790">
+                                2248 Airport Rd<br>
+                                Johnson City, NY 13790
+                            </a>
+                            <a href="https://maps.apple.com/?daddr=2248+Airport+Rd,+Johnson+City,+NY+13790&dirflg=d"
+                               class="directions-link"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Get directions to 2248 Airport Road, Johnson City, New York (opens in maps app)">
+                                <svg style="width:16px;height:16px;vertical-align:middle;margin-right:5px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                    <path d="M21.71 11.29l-9-9a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42l9 9a1 1 0 0 0 1.42 0l9-9a1 1 0 0 0 0-1.42zM14 14.5V12h-4v3H8v-4a1 1 0 0 1 1-1h5V7.5l3.5 3.5-3.5 3.5z"/>
+                                </svg>
+                                Get Directions
+                            </a>
+                        </dd>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <dt class="contact-label">Office Hours</dt>
+                        <dd class="contact-value">By Appointment</dd>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <dt class="contact-label">Facility Access</dt>
+                        <dd class="contact-value">6:00 <abbr title="ante meridiem">AM</abbr> - 11:00 <abbr title="post meridiem">PM</abbr><br>7 Days a Week</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </section>
+
+    <!-- SMS Opt-in Section -->
+    <section class="sms-optin-section" aria-labelledby="sms-heading">
+        <div class="container">
+            <h2 id="sms-heading" class="section-title" style="color: white;">Stay Connected via Text</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Get updates, payment reminders, and exclusive offers sent directly to your phone</p>
+            
+            <div class="sms-form-container">
+                <form id="smsOptinForm" action="https://formsubmit.co/selfstorage2248@gmail.com" method="POST" novalidate>
+
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New SMS Opt-In Enrollment">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
+                    <!-- Visible fields -->
+                    <div class="form-group">
+                        <label for="name">Full Name <span aria-label="required">*</span></label>
+                        <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-error" autocomplete="name">
+                        <div id="name-error" class="error-message" role="alert"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Mobile Phone Number <span aria-label="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="(607) 555-1234" required aria-required="true" aria-describedby="phone-error phone-help" pattern="[0-9\s\(\)\-]+" autocomplete="tel">
+                        <div id="phone-help" class="sr-only">Enter your 10-digit mobile phone number</div>
+                        <div id="phone-error" class="error-message" role="alert"></div>
+                    </div>
+
+                    <!-- Hidden fields for enrollment record -->
+                    <input type="hidden" name="Enrollment Date" id="enrollmentDate">
+                    <input type="hidden" name="Consent Given" value="Yes - Checkbox checked by subscriber">
+                    <input type="hidden" name="Consent Language" value="I consent to receive automated SMS messages from Affordable Self Storage at the mobile number provided above. I understand I can reply STOP to unsubscribe at any time or HELP for assistance. I have read and agree to the SMS Privacy Policy.">
+                    <input type="hidden" name="IP Timestamp" id="ipTimestamp">
+                    
+                    <div class="consent-box" role="region" aria-label="SMS Program Information">
+                        <strong>About Our SMS Program:</strong><br>
+                        By providing your mobile number and opting in, you consent to receive automated text messages from Affordable Self Storage. Message types include: account alerts, payment reminders, promotional offers, and facility updates. Message frequency varies. Message and data rates may apply.
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="consent" name="consent" required aria-required="true" aria-describedby="consent-error">
+                        <label for="consent">
+                            I consent to receive automated SMS messages from Affordable Self Storage at the mobile number provided above. I understand I can reply STOP to unsubscribe at any time or HELP for assistance. I have read and agree to the <a href="sms-privacy-policy.html" style="color: var(--accent-light); text-decoration: underline;">SMS Privacy Policy</a>.
+                        </label>
+                        <div id="consent-error" class="error-message" role="alert"></div>
+                    </div>
+                    
+                    <button type="submit" class="form-submit" id="submitBtn">
+                        Subscribe to SMS Updates
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <address class="footer-info">
+                <p><strong>Affordable Self Storage</strong></p>
+                <p>Merritt Paul Ltd <abbr title="doing business as">dba</abbr> Affordable Self Storage</p>
+                <p>2248 Airport Rd, Johnson City, <abbr title="New York">NY</abbr> 13790</p>
+                <p>Phone: <a href="tel:607-770-9342" style="color: var(--accent-light); text-decoration: none;" aria-label="Call 607-770-9342">607-770-9342</a></p>
+                <p>Facility Access: 6:00 <abbr title="ante meridiem">AM</abbr> - 11:00 <abbr title="post meridiem">PM</abbr> Daily | Office: By Appointment</p>
+            </address>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2026</span> Merritt Paul Ltd <abbr title="doing business as">dba</abbr> Affordable Self Storage. All rights reserved. | <a href="sms-privacy-policy.html" style="color: var(--accent-light); text-decoration: none;">SMS Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Set current year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Screen reader announcement helper
+        function announceToScreenReader(message) {
+            const liveRegion = document.getElementById('sr-announcements');
+            liveRegion.textContent = message;
+            setTimeout(() => { liveRegion.textContent = ''; }, 1000);
+        }
+
+        // Form validation helpers
+        function showError(inputId, message) {
+            const input = document.getElementById(inputId);
+            const errorDiv = document.getElementById(inputId + '-error');
+            input.classList.add('error');
+            input.setAttribute('aria-invalid', 'true');
+            errorDiv.textContent = message;
+            errorDiv.classList.add('visible');
+            announceToScreenReader(message);
+        }
+
+        function clearError(inputId) {
+            const input = document.getElementById(inputId);
+            const errorDiv = document.getElementById(inputId + '-error');
+            input.classList.remove('error');
+            input.setAttribute('aria-invalid', 'false');
+            errorDiv.textContent = '';
+            errorDiv.classList.remove('visible');
+        }
+
+        // Real-time validation
+        document.getElementById('name').addEventListener('blur', function() {
+            if (!this.value.trim()) showError('name', 'Please enter your full name');
+            else clearError('name');
+        });
+
+        document.getElementById('phone').addEventListener('blur', function() {
+            const phoneValue = this.value.replace(/\D/g, '');
+            if (!phoneValue) showError('phone', 'Please enter your mobile phone number');
+            else if (phoneValue.length !== 10) showError('phone', 'Please enter a valid 10-digit phone number');
+            else clearError('phone');
+        });
+
+        document.getElementById('consent').addEventListener('change', function() {
+            if (!this.checked) showError('consent', 'You must consent to receive SMS messages');
+            else clearError('consent');
+        });
+
+        // Generate PDF enrollment record
+        function generateEnrollmentPDF(name, phone, timestamp) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ unit: 'pt', format: 'letter' });
+
+            const margin = 60;
+            const pageWidth = doc.internal.pageSize.getWidth();
+            const contentWidth = pageWidth - margin * 2;
+            let y = 60;
+
+            // Helper functions
+            const addText = (text, x, size, style = 'normal', color = [0, 0, 0]) => {
+                doc.setFontSize(size);
+                doc.setFont('helvetica', style);
+                doc.setTextColor(...color);
+                doc.text(text, x, y);
+            };
+
+            const addWrappedText = (text, size, style = 'normal', lineHeight = 16) => {
+                doc.setFontSize(size);
+                doc.setFont('helvetica', style);
+                doc.setTextColor(0, 0, 0);
+                const lines = doc.splitTextToSize(text, contentWidth);
+                lines.forEach(line => {
+                    if (y > 730) { doc.addPage(); y = 60; }
+                    doc.text(line, margin, y);
+                    y += lineHeight;
+                });
+            };
+
+            const addSection = (title) => {
+                y += 10;
+                if (y > 730) { doc.addPage(); y = 60; }
+                doc.setFontSize(11);
+                doc.setFont('helvetica', 'bold');
+                doc.setTextColor(44, 62, 80);
+                doc.text(title, margin, y);
+                y += 4;
+                doc.setDrawColor(52, 152, 219);
+                doc.setLineWidth(1);
+                doc.line(margin, y, margin + contentWidth, y);
+                y += 14;
+                doc.setTextColor(0, 0, 0);
+            };
+
+            // Header bar
+            doc.setFillColor(44, 62, 80);
+            doc.rect(0, 0, pageWidth, 50, 'F');
+            doc.setFontSize(18);
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(255, 255, 255);
+            doc.text('Affordable Self Storage', margin, 30);
+            doc.setFontSize(10);
+            doc.setFont('helvetica', 'normal');
+            doc.text('SMS Program Enrollment Record', margin, 44);
+
+            y = 75;
+
+            // Title
+            doc.setFontSize(16);
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(44, 62, 80);
+            doc.text('SMS Opt-In Consent & Enrollment Form', margin, y);
+            y += 30;
+
+            // Subscriber info section
+            addSection('SUBSCRIBER INFORMATION');
+            doc.setFontSize(10);
+            doc.setFont('helvetica', 'normal');
+
+            const labelX = margin;
+            const valueX = margin + 140;
+
+            const addField = (label, value) => {
+                if (y > 730) { doc.addPage(); y = 60; }
+                doc.setFont('helvetica', 'bold');
+                doc.setFontSize(10);
+                doc.text(label, labelX, y);
+                doc.setFont('helvetica', 'normal');
+                doc.text(value, valueX, y);
+                y += 18;
+            };
+
+            addField('Full Name:', name);
+            addField('Mobile Phone:', phone);
+            addField('Enrollment Date:', timestamp);
+            addField('Consent Given:', 'YES — Checkbox affirmatively checked by subscriber');
+            y += 8;
+
+            // Consent section
+            addSection('CONSENT DISCLOSURE');
+            addWrappedText(
+                'The subscriber named above has affirmatively consented to receive automated SMS text messages from Affordable Self Storage (Merritt Paul Ltd dba Affordable Self Storage) by checking the consent checkbox on the online opt-in form located at storage2248.com.',
+                10, 'normal', 15
+            );
+            y += 6;
+            addWrappedText(
+                'Exact consent language agreed to by subscriber:',
+                10, 'bold', 15
+            );
+            y += 4;
+            doc.setFillColor(245, 247, 250);
+            doc.setDrawColor(189, 195, 199);
+            doc.rect(margin, y - 10, contentWidth, 52, 'FD');
+            addWrappedText(
+                '"I consent to receive automated SMS messages from Affordable Self Storage at the mobile number provided above. I understand I can reply STOP to unsubscribe at any time or HELP for assistance. I have read and agree to the SMS Privacy Policy."',
+                10, 'italic', 15
+            );
+            y += 10;
+
+            // Program details
+            addSection('SMS PROGRAM DETAILS');
+            addField('Program Operator:', 'Affordable Self Storage (Merritt Paul Ltd dba)');
+            addField('Program Address:', '2248 Airport Rd, Johnson City, NY 13790');
+            addField('Program Phone:', '607-770-9342');
+            addField('Message Types:', 'Account alerts, payment reminders, promotions, facility updates');
+            addField('Message Frequency:', 'Up to 8 messages per month');
+            addField('Opt-Out Method:', 'Reply STOP to any message');
+            addField('Help:', 'Reply HELP or call 607-770-9342');
+            y += 8;
+
+            // Privacy policy summary
+            addSection('SMS PRIVACY POLICY SUMMARY');
+            addWrappedText('1. Program Description: SMS program for storage account updates, payment reminders, facility news, and promotions.', 10, 'normal', 14);
+            addWrappedText('2. Message and data rates may apply. Up to 8 messages/month.', 10, 'normal', 14);
+            addWrappedText('3. To opt out: Reply STOP to any message, call 607-770-9342, or visit our facility.', 10, 'normal', 14);
+            addWrappedText('4. We do not sell or rent your mobile number to third parties.', 10, 'normal', 14);
+            addWrappedText('5. Data collected: Name, phone number, enrollment date, message interaction data.', 10, 'normal', 14);
+            addWrappedText('6. Data retained while opted in and for compliance purposes after opt-out.', 10, 'normal', 14);
+            addWrappedText('7. 10DLC Compliant: Program registered with The Campaign Registry (TCR).', 10, 'normal', 14);
+            addWrappedText('8. Consent is not required as a condition of purchasing any goods or services.', 10, 'normal', 14);
+            addWrappedText('9. Full policy available at: https://storage2248.com/#privacy-policy', 10, 'normal', 14);
+            y += 8;
+
+            // Compliance note
+            addSection('COMPLIANCE & RECORD KEEPING');
+            addWrappedText(
+                'This document serves as an official record of SMS program consent for the subscriber named above. This enrollment record was automatically generated upon submission of the online opt-in form and should be retained in accordance with applicable regulations and company policy. This record confirms that express written consent was obtained prior to sending any marketing SMS messages.',
+                10, 'normal', 14
+            );
+            y += 10;
+
+            // Footer on each page
+            const totalPages = doc.internal.getNumberOfPages();
+            for (let i = 1; i <= totalPages; i++) {
+                doc.setPage(i);
+                doc.setFillColor(44, 62, 80);
+                doc.rect(0, 772, pageWidth, 20, 'F');
+                doc.setFontSize(8);
+                doc.setFont('helvetica', 'normal');
+                doc.setTextColor(255, 255, 255);
+                doc.text('Merritt Paul Ltd dba Affordable Self Storage | 2248 Airport Rd, Johnson City, NY 13790 | 607-770-9342', margin, 784);
+                doc.text(`Page ${i} of ${totalPages}`, pageWidth - margin, 784, { align: 'right' });
+            }
+
+            return doc;
+        }
+
+        // Form submission
+        document.getElementById('smsOptinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Validate
+            let isValid = true;
+            const nameValue = document.getElementById('name').value.trim();
+            const phoneValue = document.getElementById('phone').value.replace(/\D/g, '');
+            const consentChecked = document.getElementById('consent').checked;
+
+            clearError('name'); clearError('phone'); clearError('consent');
+
+            if (!nameValue) { showError('name', 'Please enter your full name'); isValid = false; }
+            if (!phoneValue) { showError('phone', 'Please enter your mobile phone number'); isValid = false; }
+            else if (phoneValue.length !== 10) { showError('phone', 'Please enter a valid 10-digit phone number'); isValid = false; }
+            if (!consentChecked) { showError('consent', 'You must consent to receive SMS messages'); isValid = false; }
+
+            if (!isValid) {
+                announceToScreenReader('Form contains errors. Please correct them and try again.');
+                return;
+            }
+
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.setAttribute('aria-busy', 'true');
+            submitBtn.textContent = 'Generating Enrollment Record...';
+            announceToScreenReader('Processing your subscription request');
+
+            // Set hidden fields
+            const now = new Date();
+            const timestamp = now.toLocaleString('en-US', {
+                weekday: 'long', year: 'numeric', month: 'long',
+                day: 'numeric', hour: '2-digit', minute: '2-digit',
+                second: '2-digit', timeZoneName: 'short'
+            });
+            document.getElementById('enrollmentDate').value = timestamp;
+            document.getElementById('ipTimestamp').value = `Form submitted at: ${timestamp}`;
+
+            // Generate PDF
+            const formattedPhone = document.getElementById('phone').value;
+            const pdf = generateEnrollmentPDF(nameValue, formattedPhone, timestamp);
+            const pdfFilename = `SMS-Enrollment-${nameValue.replace(/\s+/g, '-')}-${now.toISOString().slice(0,10)}.pdf`;
+
+            // Convert PDF to base64 and add as hidden field
+            const pdfBase64 = pdf.output('datauristring');
+
+            // Add PDF data URI as a hidden field for reference
+            let pdfField = document.getElementById('pdfData');
+            if (!pdfField) {
+                pdfField = document.createElement('input');
+                pdfField.type = 'hidden';
+                pdfField.id = 'pdfData';
+                pdfField.name = 'PDF Enrollment Record (base64)';
+                this.appendChild(pdfField);
+            }
+            pdfField.value = pdfBase64;
+
+            // Also auto-download PDF to your browser for local saving
+            pdf.save(pdfFilename);
+
+            submitBtn.textContent = 'Submitting...';
+
+            // Submit form to FormSubmit.co after short delay
+            setTimeout(() => {
+                this.submit();
+            }, 800);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#main-content') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    target.setAttribute('tabindex', '-1');
+                    target.focus();
+                }
+            });
+        });
+
+        // Phone number formatting
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                if (value.length <= 3) value = `(${value}`;
+                else if (value.length <= 6) value = `(${value.slice(0,3)}) ${value.slice(3)}`;
+                else value = `(${value.slice(0,3)}) ${value.slice(3,6)}-${value.slice(6,10)}`;
+            }
+            e.target.value = value;
+        });
+
+        // Clear errors on input
+        ['name', 'phone'].forEach(fieldId => {
+            document.getElementById(fieldId).addEventListener('input', function() {
+                if (this.value.trim()) clearError(fieldId);
+            });
+        });
+    </script>
+</body>
+</html>
